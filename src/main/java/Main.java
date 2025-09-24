@@ -1,4 +1,5 @@
 import FIlter.LogFilter;
+import Listener.SectionListener;
 import Servlet.FormServlet;
 import Servlet.HelloServlet;
 import Servlet.InfoServlet;
@@ -33,6 +34,11 @@ public class Main {
 
         // Aggiunta del Filter
         context.addFilter(LogFilter.class, "/*", EnumSet.of(DispatcherType.REQUEST));
+
+
+        // Aggiunta del Listener
+        context.addEventListener(new SectionListener());
+
         // Faccio partire il server
         server.start();
         System.out.println("Server avviato. Endpoint disponibile");

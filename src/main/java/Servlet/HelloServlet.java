@@ -17,8 +17,10 @@ public class HelloServlet extends HttpServlet{
                             HttpServletResponse response)throws IOException {
         // Logica poi risponde
 
+        request.getSession();
+
         try{
-            Thread.sleep(10000);
+            Thread.sleep(1000);
         } catch (InterruptedException e){
             System.out.println(e.getMessage());
         }
