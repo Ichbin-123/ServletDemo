@@ -17,6 +17,12 @@ public class HelloServlet extends HttpServlet{
                             HttpServletResponse response)throws IOException {
         // Logica poi risponde
 
+        try{
+            Thread.sleep(10000);
+        } catch (InterruptedException e){
+            System.out.println(e.getMessage());
+        }
+
         // Imposto il content type della response perché tornerò una pagina html
         response.setContentType("text/html; charset=utf-8");
 

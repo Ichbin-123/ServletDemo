@@ -1,8 +1,12 @@
+import FIlter.LogFilter;
 import Servlet.FormServlet;
 import Servlet.HelloServlet;
 import Servlet.InfoServlet;
+import jakarta.servlet.DispatcherType;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
+
+import java.util.EnumSet;
 
 public class Main {
 
@@ -27,6 +31,8 @@ public class Main {
         // Aggiungiamo la nostra servlet al context
         context.addServlet(FormServlet.class, "/form");
 
+        // Aggiunta del Filter
+        context.addFilter(LogFilter.class, "/*", EnumSet.of(DispatcherType.REQUEST));
         // Faccio partire il server
         server.start();
         System.out.println("Server avviato. Endpoint disponibile");
@@ -36,6 +42,6 @@ public class Main {
 
         // impedisce al software di chiudersi solo e lascia il server attivo
         server.join(); // un po come System.in
-        System.in.read();
+        // System.in.read();
     }
 }
