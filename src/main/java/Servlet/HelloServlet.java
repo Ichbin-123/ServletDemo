@@ -1,3 +1,5 @@
+package Servlet;
+
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -34,3 +36,25 @@ public class HelloServlet extends HttpServlet{
         out.println("</html>");
     }
 }
+
+/*
+out.println("<!DOCTYPE html>");
+out.println("<html>");
+    out.println("<head>");
+        out.println("<title>Login su Servlet</title>");
+    out.println("</head>");
+    out.println("<body>");
+        out.println("<h1>Pagina di Login - Senza Olio di palma</h1>");
+        out.println("<form action='LoginServlet' method='post'>");
+            out.println("<label for='email'>Email:</label>");
+            out.println("<input type='email' id='email' name='email' required><br><br>");
+
+            out.println("<label for='password'>Password:</label>");
+            out.println("<input type='password' id='password' name='password' required><br><br>");
+
+            out.println("<input type='submit' value='Login'>");
+        out.println("</form>");
+    out.println("</body>");
+out.println("</html>");
+
+*/
