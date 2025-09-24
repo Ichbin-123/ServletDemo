@@ -1,3 +1,4 @@
+import Servlet.FormServlet;
 import Servlet.HelloServlet;
 import Servlet.InfoServlet;
 import org.eclipse.jetty.server.Server;
@@ -23,11 +24,15 @@ public class Main {
         // Aggiungiamo la nostra servlet al context
         context.addServlet(InfoServlet.class, "/info");
 
+        // Aggiungiamo la nostra servlet al context
+        context.addServlet(FormServlet.class, "/form");
+
         // Faccio partire il server
         server.start();
         System.out.println("Server avviato. Endpoint disponibile");
         System.out.println(" - http://localhost:8080/hello");
         System.out.println(" - http://localhost:8080/info");
+        System.out.println(" - http://localhost:8080/form");
 
         // impedisce al software di chiudersi solo e lascia il server attivo
         server.join(); // un po come System.in
